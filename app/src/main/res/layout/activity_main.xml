@@ -25,7 +25,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginTop="16dp"
         android:text="+"
-        android:onClick="submitOrder"
+        android:onClick="increment_up_quantity"
         />
 
     <TextView
@@ -43,7 +43,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginTop="16dp"
         android:text="-"
-        android:onClick="submitOrder"
+        android:onClick="increment_down_quantity"
         />
     <TextView
         android:layout_width="wrap_content"

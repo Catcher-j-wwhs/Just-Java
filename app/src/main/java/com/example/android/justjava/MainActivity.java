@@ -36,23 +36,38 @@ public class MainActivity extends AppCompatActivity {
 
      This method is called when the order button is clicked.
      */
-    public void submitOrder(View view) {
-         int fine = 1;
-        display(fine);
-        displayPrice(fine*5);
+    public int quantity = 2;
 
+
+    public void increment_up_quantity(View view) {
+        quantity+= 1;
+        display(quantity);
+        displayPrice(quantity*5);
 
     }
+    public void increment_down_quantity(View view) {
+        quantity-= 1;
+        display(quantity);
+        displayPrice(quantity*5);
+
+    }
+    public void submitOrder(View view) {
+        display(quantity);
+        displayPrice(quantity*5);
+    }
+
     /**
 
      This method displays the given quantity value on the screen.
      */
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+        TextView quantityTextView = (TextView)
+                findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
     private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        TextView priceTextView = (TextView)
+                findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 }
