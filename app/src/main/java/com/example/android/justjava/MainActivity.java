@@ -42,18 +42,18 @@ public class MainActivity extends AppCompatActivity {
     public void increment_up_quantity(View view) {
         quantity+= 1;
         display(quantity);
-        displayPrice(quantity*5);
+
 
     }
     public void increment_down_quantity(View view) {
         quantity-= 1;
         display(quantity);
-        displayPrice(quantity*5);
+
 
     }
     public void submitOrder(View view) {
-        display(quantity);
-        displayPrice(quantity*5);
+        String priceMessage = "Price $ " + quantity*5 +"\nThank you!" ;
+        displaymessage(priceMessage);
     }
 
     /**
@@ -70,4 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+    private void  displaymessage(String message){
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
+
 }
